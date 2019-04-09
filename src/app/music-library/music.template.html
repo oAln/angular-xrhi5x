@@ -1,0 +1,26 @@
+  <br/>
+	<p>---------------------------------------------------------</p>
+	<h1>Music Library</h1>
+	<br/>
+<form>
+	<input type='search' placeholder='Enter Search String' #search />
+  <input type='button' value='Search' (click)="doSearch(search.value)" />
+</form>
+<div class="text-center">
+  <p class="lead" *ngIf="loading">Loading...</p>
+</div>
+<div class="list-group">
+  <ul>
+  <li *ngFor="let track of itunes.results">
+    {{track.trackName}}
+  </li>
+</ul>
+
+  <!-- <a [routerLink]="['artist', track.artistId]"
+     class="list-group-item list-group-item-action"
+     *ngFor="let track of itunes.results">
+    <img src="{{track.thumbnail}}">
+    {{ track.name }} <span class="text-muted">by</span> {{ track.artist }}
+  </a> -->
+</div>
+<!-- <div  *ngFor="let item of results | async"> ... </div> -->
